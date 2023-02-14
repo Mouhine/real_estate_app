@@ -34,7 +34,7 @@ const Slide = () => {
     getPro();
   }, []);
   return (
-    <div className=" py-12 mx-auto w-[80%]   ">
+    <div className=" py-12 mx-auto max-w-5xl  w-[100%]   ">
       <Splide
         options={{
           perPage: 4,

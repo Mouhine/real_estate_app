@@ -14,7 +14,7 @@ const Search_by_input = () => {
     <div className="relative  ">
       <input
         type="text"
-        className="outline-none py-4 pl-14 w-[90%] text-xl rounded-lg shadow-md my-4 pr-8 "
+        className="outline-none py-4 pl-14 w-[90%] text-xl rounded-lg shadow-md my-4 px-8 "
         placeholder="Search by location ..."
         value={location}
         onChange={(e) => {
@@ -25,7 +25,7 @@ const Search_by_input = () => {
         }}
       />
       {isOpen && (
-        <div className="absolute z-20 flex flex-col px-4 shadow space-y-1 w-full -bottom-[200px] max-h-[200px] overflow-y-scroll bg-white border rounded-lg ">
+        <div className="absolute z-50 flex flex-col px-4 shadow space-y-1 w-full -bottom-[200px] max-h-[200px] overflow-y-scroll bg-white border rounded-lg ">
           {locations?.map((l, i) => {
             return (
               <h1
@@ -49,7 +49,7 @@ const Search_by_input = () => {
       <div className="absolute top-8 left-3 ">
         <HiLocationMarker size={26} />
       </div>
-      <button className=" shadow-lg absolute px-6  right-[4rem] top-6 bg-[#3857d4] tracking-wide font-semibold border rounded  py-2 text-white ">
+      <button className=" shadow-lg absolute px-6 mx-4  right-[10%] top-6 bg-[#3857d4] tracking-wide font-semibold border rounded  py-2 text-white ">
         <Link href={`/Search/${location}`}>search</Link>
       </button>
     </div>

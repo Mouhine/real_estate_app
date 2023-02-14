@@ -11,10 +11,11 @@ const containerStyle = {
   height: "700px",
 };
 
-const center = {
-  lat: 24.4539,
-  lng: 54.3773,
-};
+// const center = {
+//   lat: 24.4539,
+//   lng: 54.3773,
+// };
+
 interface MapProps {
   properties: Hit[];
 }
@@ -25,7 +26,10 @@ function MyComponent({ properties }: MapProps) {
   });
   const { locationData } = useSearchContext();
   const [map, setMap] = React.useState(null);
-
+  const center = {
+    lat: locationData.geography.lat || 24.4539,
+    lng: locationData.geography.lng || 54.3773,
+  };
   const onLoad = React.useCallback(function callback(map) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -41,8 +45,8 @@ function MyComponent({ properties }: MapProps) {
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={locationData.geography}
-      zoom={14}
+      center={center}
+      zoom={1}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >

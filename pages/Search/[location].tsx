@@ -14,6 +14,7 @@ const SearchPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [properties, setProperties] = useState<Hit[] | []>([]);
   const SearchByFilter = useSearch();
+  const { location } = router.query;
   const {
     locationData,
     purpose,
@@ -43,6 +44,7 @@ const SearchPage = () => {
     minSalePrice,
     maxSalePrice,
     beds,
+    location,
     baths,
   ]);
   return (
@@ -52,14 +54,16 @@ const SearchPage = () => {
         <section className="col-span-4 lg:block hidden  rounded-lg overflow-hidden">
           <Map properties={properties} />
         </section>
-        <section className="grid lg:grid-cols-2 min-[1024px]:grid-cols-1 min-[1280px]:grid-cols-2   lg:max-h-[90vh]  overflow-y-scroll grid-cols-1  gap-4 md:grid-cols-3 col-span-7 lg:col-span-3">
+        <section className="grid  min-[1024px]:grid-cols-1 min-[1280px]:grid-cols-2   lg:max-h-[90vh]  overflow-y-scroll grid-cols-1  gap-4 md:grid-cols-3 col-span-7 lg:col-span-3">
           {isLoading
             ? [1, 2, 3, 4, 5, 6].map((s, i) => {
                 return <Skelton key={i} />;
               })
             : properties?.map((l, i) => {
                 return <Card listing={l} key={i} />;
-              }) || "there is no result"}
+              })}
+
+          {properties.length === 0 && "THER IS NO RESULT"}
         </section>
       </section>
     </div>

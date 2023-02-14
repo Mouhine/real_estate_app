@@ -6,7 +6,7 @@ const HeroInfo = () => {
   return (
     <section className=" col-span-2 space-y-4 px-6 py-4 z-10">
       <div className="w-[80%] space-y-4">
-        <h1 className="text-[60px]  leading-tight tracking-wider	 font-bold text-white  ">
+        <h1 className="text-[50px]  leading-tight tracking-wider	 font-bold text-white  ">
           Discover Most Suitable Property in UAE
         </h1>
         <p className=" font-semibold tracking-wide font-sans text-[#686868] ">
