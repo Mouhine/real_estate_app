@@ -39,7 +39,7 @@ const Filters = () => {
       <div className=" w-full">
         <Search_by_input />
       </div>
-      <div className="flex items-center justify-between flex-wrap w-full">
+      <div className="flex items-center justify-between flex-wrap w-full space-y-3 md:space-y-0 ">
         <div className="col-span-2 place-self-center ">
           <select
             name=""
